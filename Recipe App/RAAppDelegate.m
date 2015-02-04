@@ -7,6 +7,7 @@
 //
 
 #import "RAAppDelegate.h"
+#import "RecipeViewController.h"
 
 @implementation RAAppDelegate
 
@@ -15,6 +16,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    RecipeViewController *viewController = [RecipeViewController new];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    
+    self.window.rootViewController = navController;
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
