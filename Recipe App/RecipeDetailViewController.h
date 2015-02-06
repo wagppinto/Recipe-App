@@ -12,4 +12,6 @@
 
 @property (nonatomic,assign) NSInteger indexRecipes;
 
+- (float) sizeOfPreviousView:(UIView *)nameOfView;
+
 @end
