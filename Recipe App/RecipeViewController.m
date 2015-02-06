@@ -8,11 +8,12 @@
 
 #import "RecipeViewController.h"
 #import "RecipesTableViewDataSource.h"
+#import "RecipeDetailViewController.h"
+#import "RARecipes.h"
 
-@interface RecipeViewController ()
+@interface RecipeViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView; //Add a UITableView as a property on the viewController class
-
 @property (nonatomic, strong) RecipesTableViewDataSource *datasource;
 
 @end
@@ -30,13 +31,25 @@
     [self.datasource registerTableView:self.tableView];
 
     [self.view addSubview: self.tableView];
-    
+    self.tableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //NSLog(@"%li", (long)indexPath.row);
+    
+    RecipeDetailViewController *dvc = [RecipeDetailViewController new];
+    dvc.title = [RARecipes titleAtIndex:indexPath.row];
+    dvc.indexRecipes = indexPath.row;
+        
+    [self.navigationController pushViewController:dvc animated:YES];
+
+}
+     
 
 /*
 #pragma mark - Navigation
