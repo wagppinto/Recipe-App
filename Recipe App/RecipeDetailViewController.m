@@ -36,8 +36,11 @@
     descrip.text = recipeDescription;
     [descrip sizeToFit];
     [self.detailScrollView addSubview:descrip];
+    
     // Creating a separate view window to be below description
-    UILabel *ingredientsWithVolume = [[UILabel alloc]initWithFrame:CGRectMake(20,160,self.view.frame.size.width,self.view.frame.size.height)];
+    float padding = 30;
+    float sizeOfDescriptionView = descrip.frame.size.height + descrip.frame.origin.y + padding;
+    UIView *ingredientsWithVolume = [[UIView alloc]initWithFrame:CGRectMake(20, sizeOfDescriptionView,self.view.frame.size.width,self.view.frame.size.height)];
     [self.detailScrollView addSubview:ingredientsWithVolume];
     
     //Creating label for the ingredientes of the recipe
@@ -58,12 +61,10 @@
     
     //create view view for the recipe's directions
     UIView *recipeDirections = [[UIView alloc]initWithFrame:CGRectMake(20, 400, self.view.frame.size.width, self.view.frame.size.height)];
-    
     [self.detailScrollView addSubview:recipeDirections];
-    //recipeDirections.backgroundColor = [UIColor redColor];
+
 
     //create the label for the recipe descrition:
-    
     NSArray *directionsArray = [RARecipes directionsAtIndex:self.indexRecipes];
     int paddingBetweenLabels = 20;
     float heightOfDirectionLabel = 0;
