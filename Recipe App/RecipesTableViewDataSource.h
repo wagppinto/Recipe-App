@@ -12,6 +12,8 @@
 
 
 
--(void)registerTableView:(UITableView *)tableView;
+- (void)registerTableView:(UITableView *)tableView;
+
+- (NSString *)getImageStringAtIndex:(int)index;
 
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493F3A691A8585B10094DB5E /* garlicpork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493F3A641A8585B10094DB5E /* garlicpork.jpg */; };
+		493F3A6A1A8585B10094DB5E /* jamba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493F3A651A8585B10094DB5E /* jamba.jpg */; };
+		493F3A6B1A8585B10094DB5E /* chocolate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493F3A661A8585B10094DB5E /* chocolate.jpg */; };
+		493F3A6C1A8585B10094DB5E /* pumpkinpie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493F3A671A8585B10094DB5E /* pumpkinpie.jpg */; };
+		493F3A6D1A8585B10094DB5E /* salmon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493F3A681A8585B10094DB5E /* salmon.jpg */; };
 		71F67B51192C8D6A00E609F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B50192C8D6A00E609F1 /* Foundation.framework */; };
 		71F67B53192C8D6A00E609F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B52192C8D6A00E609F1 /* CoreGraphics.framework */; };
 		71F67B55192C8D6A00E609F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B54192C8D6A00E609F1 /* UIKit.framework */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493F3A641A8585B10094DB5E /* garlicpork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = garlicpork.jpg; path = "../../../Food Stuff/garlicpork.jpg"; sourceTree = "<group>"; };
+		493F3A651A8585B10094DB5E /* jamba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jamba.jpg; path = "../../../Food Stuff/jamba.jpg"; sourceTree = "<group>"; };
+		493F3A661A8585B10094DB5E /* chocolate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chocolate.jpg; path = "../../../Food Stuff/chocolate.jpg"; sourceTree = "<group>"; };
+		493F3A671A8585B10094DB5E /* pumpkinpie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pumpkinpie.jpg; path = "../../../Food Stuff/pumpkinpie.jpg"; sourceTree = "<group>"; };
+		493F3A681A8585B10094DB5E /* salmon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = salmon.jpg; path = "../../../Food Stuff/salmon.jpg"; sourceTree = "<group>"; };
 		71F67B4D192C8D6A00E609F1 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F67B50192C8D6A00E609F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71F67B52192C8D6A00E609F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +148,11 @@
 		71F67B57192C8D6A00E609F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				493F3A641A8585B10094DB5E /* garlicpork.jpg */,
+				493F3A651A8585B10094DB5E /* jamba.jpg */,
+				493F3A661A8585B10094DB5E /* chocolate.jpg */,
+				493F3A671A8585B10094DB5E /* pumpkinpie.jpg */,
+				493F3A681A8585B10094DB5E /* salmon.jpg */,
 				71F67B58192C8D6A00E609F1 /* Recipe App-Info.plist */,
 				71F67B59192C8D6A00E609F1 /* InfoPlist.strings */,
 				71F67B5C192C8D6A00E609F1 /* main.m */,
@@ -240,8 +255,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493F3A691A8585B10094DB5E /* garlicpork.jpg in Resources */,
+				493F3A6B1A8585B10094DB5E /* chocolate.jpg in Resources */,
 				71F67B5B192C8D6A00E609F1 /* InfoPlist.strings in Resources */,
+				493F3A6D1A8585B10094DB5E /* salmon.jpg in Resources */,
+				493F3A6C1A8585B10094DB5E /* pumpkinpie.jpg in Resources */,
 				71F67B63192C8D6A00E609F1 /* Images.xcassets in Resources */,
+				493F3A6A1A8585B10094DB5E /* jamba.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

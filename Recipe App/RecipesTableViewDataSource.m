@@ -30,6 +30,12 @@ static NSString * const cellIdentifier = @"identifier";
     return cell;
 }
 
+- (NSString *)getImageStringAtIndex:(int)index {
+     NSArray *imageList = @[@"garlicpork.jpg", @"salmon.jpg", @"pumpkinpie.jpg", @"jamba.jpg", @"chocolate.jpg",];
+    
+    return imageList[index];
+}
+
 
 
 @end

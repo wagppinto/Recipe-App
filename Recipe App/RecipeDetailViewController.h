@@ -10,7 +10,7 @@
 
 @interface RecipeDetailViewController : UIViewController
 
-@property (nonatomic,assign) NSInteger indexRecipes;
+@property (nonatomic,assign) int indexRecipes;
 
 - (float) sizeOfPreviousView:(UIView *)nameOfView;
 
