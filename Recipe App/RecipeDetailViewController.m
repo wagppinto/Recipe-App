@@ -31,10 +31,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.detailScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview: self.detailScrollView];
-    //self.detailScrollView.backgroundColor = [UIColor greenColor];
+    //self.detailScrollView.backgroundColor = [UIColor cyanColor];
     
     // creating view with image
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 300)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
     // imageView.center = self.detailScrollView.center;
     imageView.clipsToBounds = YES;
 
@@ -59,21 +59,27 @@
     
     // Creating a separate view window to be below description
     newViewYOrigin += descrip.frame.size.height + paddingBetweenViews;
-
+    float paddingBetweenIngredientLabels = 10;
+    float heightOfIngredientsWithVolumeView = 0;
     UIView *ingredientsWithVolume = [[UIView alloc]initWithFrame:CGRectMake(20, newViewYOrigin, self.view.frame.size.width, 0)];
-
     [self.detailScrollView addSubview:ingredientsWithVolume];
     //ingredientsWithVolume.backgroundColor = [UIColor redColor];
 
         //Creating label for the ingredientes of the recipe
-        for (int i = 0; i < [RARecipes ingredientCountAtIndex:self.indexRecipes]; i++) {
-            UILabel *ingredientsKey = [[UILabel alloc]initWithFrame:CGRectMake(0, i * paddingBetweenViews, self.view.frame.size.width, 0)];
-            ingredientsKey.text = [RARecipes ingredientTypeAtIndex:i inRecipeAtIndex:self.indexRecipes];
-            [ingredientsKey sizeToFit];
-            [ingredientsWithVolume addSubview:ingredientsKey];
-            newViewYOrigin += ingredientsKey.frame.size.height;
-            //ingredientsKey.backgroundColor = [UIColor orangeColor];
+    
+        
+    int recipeCount = (int)[RARecipes ingredientCountAtIndex:self.indexRecipes];
+        for (int i = 0; i < recipeCount; i++) {
+            UILabel *ingredientKeyLabel = [UILabel new]; //[[UILabel alloc]initWithFrame:CGRectMake(0, i * paddingBetweenIngredientLabels + , self.view.frame.size.width, 0)];
+            ingredientKeyLabel.text = [RARecipes ingredientTypeAtIndex:i inRecipeAtIndex:self.indexRecipes];
+            [ingredientKeyLabel sizeToFit];
+            [ingredientsWithVolume addSubview:ingredientKeyLabel];
+            CGRect ingredientsWithVolumeRect = ingredientKeyLabel.frame;
+            ingredientsWithVolumeRect.origin.y = i * (paddingBetweenIngredientLabels + ingredientsWithVolumeRect.size.height);
+            ingredientsWithVolumeRect.size.width = self.view.frame.size.width;
+            ingredientKeyLabel.frame = ingredientsWithVolumeRect;
 
+            //ingredientKeyLabel.backgroundColor = [UIColor orangeColor];
             
             //Creating label for the ingrediente's volume of the recipe
             UILabel *volumeKey = [[UILabel alloc]initWithFrame:CGRectMake(200, i * paddingBetweenViews, self.view.frame.size.width, 0)];
@@ -81,9 +87,23 @@
             volumeKey.text = [RARecipes ingredientVolumeAtIndex:i inRecipeAtIndex:self.indexRecipes];
             [volumeKey sizeToFit];
             [ingredientsWithVolume addSubview:volumeKey];
-        }
+            ingredientsWithVolumeRect = volumeKey.frame;
+            ingredientsWithVolumeRect.origin.y = i * (paddingBetweenIngredientLabels + ingredientsWithVolumeRect.size.height);
+            ingredientsWithVolumeRect.size.width = self.view.frame.size.width;
+            volumeKey.frame = ingredientsWithVolumeRect;
+            
+            if (i == recipeCount - 1) {
+                paddingBetweenIngredientLabels = 0;
+            }
+            heightOfIngredientsWithVolumeView += paddingBetweenIngredientLabels + ingredientKeyLabel.frame.size.height;
 
-    newViewYOrigin += paddingBetweenViews * 3;
+           
+
+        }
+    CGRect ingredientsWithVolumeFrame = ingredientsWithVolume.frame;
+    ingredientsWithVolumeFrame.size.height = heightOfIngredientsWithVolumeView;
+    ingredientsWithVolume.frame = ingredientsWithVolumeFrame;
+    newViewYOrigin += ingredientsWithVolume.frame.size.height + paddingBetweenViews;
 
     //create view view for the recipe's directions
     UIView *recipeDirections = [[UIView alloc]initWithFrame:CGRectMake(20, newViewYOrigin, self.view.frame.size.width, self.view.frame.size.height)];
